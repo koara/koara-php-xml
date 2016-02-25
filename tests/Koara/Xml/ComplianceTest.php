@@ -1,8 +1,7 @@
 <?php
 namespace Koara;
 
-use Koara\Renderer\Html5Renderer;
-use Koara\Renderer\XmlRenderer;
+use Koara\Xml\XmlRenderer;
 
 class ComplianceTest extends \PHPUnit_Framework_TestCase {
 
@@ -27,14 +26,14 @@ class ComplianceTest extends \PHPUnit_Framework_TestCase {
 	/**
 	 * @dataProvider provider
 	 */
-	public function testKoaraToHtml5($module, $testcase) {		
-			$xml = file_get_contents('testsuite/output/html5/'.$module.'/'.$testcase.'.htm');
+	public function testKoaraToXml($module, $testcase) {		
+			$xml = file_get_contents('testsuite/output/xml/'.$module.'/'.$testcase.'.xml');
 	  		$xml = mb_convert_encoding($xml, 'UTF-8', mb_detect_encoding($xml, 'UTF-8, ISO-8859-1', true));
 		 
 	  		$parser = new Parser();
 	  		$document = $parser->parseFile('testsuite/input/'.$module.'/'.$testcase.'.kd');
  		
-	 		$renderer = new Html5Renderer();
+	 		$renderer = new XmlRenderer();
 	 		$document->accept($renderer);
 	 		
 	 		$this->assertEquals($xml, $renderer->getOutput());
