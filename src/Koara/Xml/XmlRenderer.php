@@ -6,6 +6,8 @@ use Koara\Ast\BlockElement;
 use Koara\Ast\ListItem;
 use Koara\Ast\Paragraph;
 
+use koara\Renderer;
+
 class XmlRenderer implements Renderer
 {
     /**

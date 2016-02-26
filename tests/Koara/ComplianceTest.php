@@ -26,7 +26,7 @@ class ComplianceTest extends \PHPUnit_Framework_TestCase {
 	/**
 	 * @dataProvider provider
 	 */
-	public function testKoaraToXml($module, $testcase) {		
+	public function testKoaraToHtml5($module, $testcase) {		
 			$xml = file_get_contents('testsuite/output/xml/'.$module.'/'.$testcase.'.xml');
 	  		$xml = mb_convert_encoding($xml, 'UTF-8', mb_detect_encoding($xml, 'UTF-8, ISO-8859-1', true));
 		 
@@ -36,7 +36,7 @@ class ComplianceTest extends \PHPUnit_Framework_TestCase {
 	 		$renderer = new XmlRenderer();
 	 		$document->accept($renderer);
 	 		
-	 		$this->assertEquals($xml, $renderer->getOutput());
+	 		$this->assertEquals($html, $renderer->getOutput());
 	}
 	
 
