@@ -2,7 +2,7 @@
 
 namespace Koara;
 
-use Koara\Html\Html5Renderer;
+use Koara\Xml\XmlRenderer;
 
 class EndToEndTest extends \PHPUnit_Framework_TestCase {
 	
@@ -1028,13 +1028,13 @@ class EndToEndTest extends \PHPUnit_Framework_TestCase {
 	}
 	
 	private function assertOutput($file) {
-		$html = file_get_contents ('testsuite/output/html5/end2end/' . $file . '.htm' );
-		$html = mb_convert_encoding ($html, 'UTF-8', mb_detect_encoding ($html, 'UTF-8, ISO-8859-1', true ) );
+		$xml = file_get_contents ('testsuite/output/html5/end2end/' . $file . '.htm' );
+		$xml = mb_convert_encoding ($xml, 'UTF-8', mb_detect_encoding ($xml, 'UTF-8, ISO-8859-1', true ) );
 		
 		$parser = new Parser ();
 		$parser->setModules ( array_slice ( func_get_args (), 1 ) );
 		$document = $parser->parseFile ('testsuite/input/end2end.kd' );
-		$renderer = new Html5Renderer ();
+		$renderer = new XmlRenderer ();
 		$document->accept ( $renderer );
 		
 		$this->assertEquals ( $html, $renderer->getOutput () );
