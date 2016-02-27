@@ -1028,7 +1028,7 @@ class EndToEndTest extends \PHPUnit_Framework_TestCase {
 	}
 	
 	private function assertOutput($file) {
-		$xml = file_get_contents ('testsuite/output/html5/end2end/' . $file . '.htm' );
+		$xml = file_get_contents ('testsuite/output/xml/end2end/' . $file . '.htm' );
 		$xml = mb_convert_encoding ($xml, 'UTF-8', mb_detect_encoding ($xml, 'UTF-8, ISO-8859-1', true ) );
 		
 		$parser = new Parser ();
