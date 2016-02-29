@@ -4,21 +4,21 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "1df358d4b7b9b9d198eb119b04e1e007",
-    "content-hash": "5b38d7c64247a396686483176eaa22a8",
+    "hash": "e097d56708ed98ad6c597c4454c9d9f8",
+    "content-hash": "34e53a9bb4a1ccd9b7b17803c05a0fff",
     "packages": [
         {
             "name": "koara/koara",
-            "version": "0.9.1",
+            "version": "0.9.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/koara/koara-php.git",
-                "reference": "e2a6ded15fe520fd9d02a4e8b96a86712004126b"
+                "reference": "1e622f7af5ca43962e86fdfe7e5ec669a596da79"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/koara/koara-php/zipball/e2a6ded15fe520fd9d02a4e8b96a86712004126b",
-                "reference": "e2a6ded15fe520fd9d02a4e8b96a86712004126b",
+                "url": "https://api.github.com/repos/koara/koara-php/zipball/1e622f7af5ca43962e86fdfe7e5ec669a596da79",
+                "reference": "1e622f7af5ca43962e86fdfe7e5ec669a596da79",
                 "shasum": ""
             },
             "require": {
@@ -48,7 +48,7 @@
             "keywords": [
                 "koara"
             ],
-            "time": "2016-02-26 05:13:42"
+            "time": "2016-02-26 18:31:24"
         }
     ],
     "packages-dev": [
@@ -1098,16 +1098,16 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v3.0.2",
+            "version": "v3.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
-                "reference": "3cf0709d7fe936e97bee9e954382e449003f1d9a"
+                "reference": "b5ba64cd67ecd6887f63868fa781ca094bd1377c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/3cf0709d7fe936e97bee9e954382e449003f1d9a",
-                "reference": "3cf0709d7fe936e97bee9e954382e449003f1d9a",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/b5ba64cd67ecd6887f63868fa781ca094bd1377c",
+                "reference": "b5ba64cd67ecd6887f63868fa781ca094bd1377c",
                 "shasum": ""
             },
             "require": {
@@ -1143,7 +1143,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-            "time": "2016-02-02 13:44:19"
+            "time": "2016-02-23 15:16:06"
         }
     ],
     "aliases": [],
