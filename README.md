@@ -6,7 +6,7 @@
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://github.com/koara/koara-php-xml/blob/master/LICENSE)
 
 # koara-php-xml
-[Koara](http://www.koara.io) is a modular lightweight markup language. This project is for parsing Koara to Xml.
+[Koara](http://www.koara.io) is a modular lightweight markup language. This project is for parsing Koara to Xml without external dependencies.
 
 ## Getting Started
 This project can be installed via Composer:
