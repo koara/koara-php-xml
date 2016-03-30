@@ -15,7 +15,7 @@
     ],
     "require": {
         "php": ">=5.4.0",
-        "koara/koara": "0.9.3"
+        "koara/koara": "0.10"
     },
     "require-dev": {
         "phpunit/phpunit": "~4.8 || ~5.1"
