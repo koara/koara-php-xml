@@ -28,8 +28,7 @@ use Koara\Renderer\XmlRenderer;
 $parser = new Parser();
 
 // Enable which modules to parse (all are parsed by default)
-$parser->setModules(Module::PARAGRAPHS, Module::HEADINGS, Module::LISTS, Module::LINKS,
-        Module::IMAGES, Module::FORMATTING, Module::BLOCKQUOTES, Module::CODE);
+$parser->setModules("paragraphs", "headings", "lists", "links", "images", "formatting", "blockquotes", "code");
 
 // Parse string or file and generate AST
 $document = $parser->parse('Hello World!');
