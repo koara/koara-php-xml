@@ -33,7 +33,7 @@ class XmlRendererTest extends \PHPUnit_Framework_TestCase {
  		$expected .= "  </paragraph>\n";
  		$expected .= "</document>";
 	
- 		$this->renderer->setDeclarationTag("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
+ 		$this->renderer->setDeclarationTag("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
  		$this->document->accept($this->renderer);
  		$this->assertEquals($expected, $this->renderer->getOutput());
 	}

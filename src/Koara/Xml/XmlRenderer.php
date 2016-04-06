@@ -33,7 +33,7 @@ class XmlRenderer implements Renderer
     {
     	$this->out = "";
     	if($this->declarationTag != null) {
-	        $this->out = $this->declarationTag;
+	        $this->out = $this->declarationTag."\n";
     	}
     	
         if($node->getChildren() != null && sizeof($node->getChildren()) > 0) {
