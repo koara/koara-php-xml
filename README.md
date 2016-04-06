@@ -39,3 +39,9 @@ $document->accept($renderer);
 
 echo $renderer->getOutput();
 ```
+
+## Configuration
+### Parser
+### Renderer
+- `setDeclarationTag()`: 
+  Add a declaration tag to the XML document.

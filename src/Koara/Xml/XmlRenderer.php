@@ -24,9 +24,18 @@ class XmlRenderer implements Renderer
      */
     private $listSequence = [];
 
+    /**
+     * @var string
+     */
+    private $declarationTag;
+    
     public function visitDocument($node)
     {
-        $this->out = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
+    	$this->out = "";
+    	if($this->declarationTag != null) {
+	        $this->out = $this->declarationTag;
+    	}
+    	
         if($node->getChildren() != null && sizeof($node->getChildren()) > 0) {
         	$this->out .= "<document>\n";
 	        $node->childrenAccept($this);
@@ -217,4 +226,9 @@ class XmlRenderer implements Renderer
     {
         return trim($this->out);
     }
+    
+    public function setDeclarationTag($declarationTag) {
+    	$this->declarationTag = $declarationTag;
+    }
+    
 }
