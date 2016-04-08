@@ -1,47 +1,44 @@
 [![Koara](http://www.koara.io/logo.png)](http://www.koara.io)
 
-[![Build Status](https://img.shields.io/travis/koara/koara-php-xml.svg)](https://travis-ci.org/koara/koara-php-xml)
-[![Coverage Status](https://img.shields.io/coveralls/koara/koara-php-xml.svg)](https://coveralls.io/github/koara/koara-php-xml?branch=master)
+[![Build Status](https://img.shields.io/travis/koara/koara-php-html.svg)](https://travis-ci.org/koara/koara-php-html)
+[![Coverage Status](https://img.shields.io/coveralls/koara/koara-php-html.svg)](https://coveralls.io/github/koara/koara-php-html?branch=master)
 [![Latest Version](https://img.shields.io/packagist/v/koara/koara-xml.svg)](https://packagist.org/packages/koara/koara-xml)
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://github.com/koara/koara-php-xml/blob/master/LICENSE)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://github.com/koara/koara-php-html/blob/master/LICENSE)
 
-# koara-php-xml
-[Koara](http://www.koara.io) is a modular lightweight markup language. This project is for parsing Koara to Xml without external dependencies.
+# Koara-php-html
+[Koara](http://www.koara.io) is a modular lightweight markup language. This project can render the koara AST to Html in php.  
+The AST is created by the [core koara parser](https://github.com/koara/koara-php).
 
-## Getting Started
-This project can be installed via Composer:
+## Getting started
+- Download [ZIP file]()
+- Composer
 
-``` bash
-$ composer require koara/koara-xml
-```
+  ``` bash
+  $ composer require koara/koara-xml
+  ```
 
 ## Usage
 ```php
-<?php
+<?php 
 
 require_once __DIR__ . '/vendor/autoload.php';
-
+	
 use Koara\Parser;
-use Koara\Module;
-use Koara\Renderer\XmlRenderer;
+use Koara\Xml\XmlRenderer;
 
 $parser = new Parser();
-
-// Enable which modules to parse (all are parsed by default)
-$parser->setModules("paragraphs", "headings", "lists", "links", "images", "formatting", "blockquotes", "code");
-
-// Parse string or file and generate AST
-$document = $parser->parse('Hello World!');
-
-// Render as Xml
+$result = $parser->parse("Hello World!"); 
 $renderer = new XmlRenderer();
-$document->accept($renderer);
-
+$result->accept($renderer);
 echo $renderer->getOutput();
+
+?>
 ```
 
 ## Configuration
-### Parser
-### Renderer
-- `setDeclarationTag()`: 
-  Add a declaration tag to the XML document.
+You can configure the Renderer:
+
+-  **$renderer->setDeclarationTag($declarationTag)**  
+   Default:	`null`
+   
+   Add an XML Declaration Tag add the top of the generated output.  
