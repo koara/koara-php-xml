@@ -48,13 +48,15 @@ class XmlRenderer implements Renderer
     public function visitHeading($node)
     {
         $this->level++;
-		$this->out .= $this->indent()."<heading level=\"".$node->getValue()."\"";
+        $this->indent();
+		$this->out .= "<heading level=\"".$node->getValue()."\"";
 		if($node->getChildren() != null && sizeof($node->getChildren()) > 0) {
 			$this->out .= ">\n";
 			$this->level++;
 			$node->childrenAccept($this);
 			$this->level--;
-			$this->out .= $this->indent()."</heading>\n";
+			$this->indent();
+			$this->out .= "</heading>\n";
 		} else {
 			$this->out .= " />\n";
 		}
@@ -64,13 +66,15 @@ class XmlRenderer implements Renderer
     public function visitBlockQuote($node)
     {
     	$this->level++;
-    	$this->out .= $this->indent()."<blockquote";
+    	$this->indent();
+    	$this->out .= "<blockquote";
     	if($node->getChildren() != null && sizeof($node->getChildren()) > 0) {
     		$this->out .= ">\n";
     		$this->level++;
     		$node->childrenAccept($this);
     		$this->level--;
-    		$this->out .= $this->indent()."</blockquote>\n";
+    		$this->indent();
+    		$this->out .= "</blockquote>\n";
     		$this->level--;
     	} else {
     		$this->out .= " />\n";
@@ -80,23 +84,27 @@ class XmlRenderer implements Renderer
     public function visitListBlock($node)
     {
     	$this->level++;
-    	$this->out .= $this->indent()."<list ordered=\"".($node->isOrdered() ? "true": "false")."\">\n";
+    	$this->indent();
+    	$this->out .= "<list ordered=\"".($node->isOrdered() ? "true": "false")."\">\n";
     	$node->childrenAccept($this);
-    	$this->out .= $this->indent()."</list>\n";
+    	$this->indent();
+    	$this->out .= "</list>\n";
     	$this->level--;
     }
 
     public function visitListItem($node)
     {
     	$this->level++;
-    	$this->out .= $this->indent()."<listitem";
+    	$this->indent();
+    	$this->out .= "<listitem";
     	if($node->getNumber() != null) {
     		$this->out .= " number=\"".$node->getNumber()."\"";
     	}
     	if($node->getChildren() != null && sizeof($node->getChildren()) > 0) {
     		$this->out .= ">\n";
     		$node->childrenAccept($this);
-    		$this->out .= $this->indent()."</listitem>\n";
+    		$this->indent();
+    		$this->out .= "</listitem>\n";
     	} else {
     		$this->out .= " />\n";
     	}
@@ -106,16 +114,17 @@ class XmlRenderer implements Renderer
     public function visitCodeBlock($node)
     {
     	$this->level++;
-    	$this->out .= $this->indent()."<codeblock";
+    	$this->indent();
+    	$this->out .= "<codeblock";
     	if($node->getLanguage() != null) {
     		$this->out .= " language=\"".$node->getLanguage()."\"";
     	}
     	if($node->getValue() != null && strlen($node->getValue()) > 0) {
-    		$this->out .= ">\n";
+    		$this->out .= ">";
     		$this->level++;
     		$this->out .= $this->escape($node->getValue());
     		$this->level--;
-    		$this->out .= $this->indent()."</codeblock>\n";
+    		$this->out .= "</codeblock>\n";
     		$this->level--;
     	} else {
     		$this->out .= " />\n";
@@ -125,11 +134,13 @@ class XmlRenderer implements Renderer
     public function visitParagraph($node)
     {
     	$this->level++;
-    	$this->out .= $this->indent()."<paragraph>\n";
+    	$this->indent();
+    	$this->out .= "<paragraph>\n";
     	$this->level++;
     	$node->childrenAccept($this);
     	$this->level--;
-    	$this->out .= $this->indent()."</paragraph>\n";
+    	$this->indent();
+    	$this->out .= "</paragraph>\n";
     	$this->level--;
     }
 
@@ -139,52 +150,63 @@ class XmlRenderer implements Renderer
 
     public function visitImage($node)
     {
-      	$this->out .= $this->indent()."<image url=\"".$this->escapeUrl($node->getValue())."\">\n";
+    	$this->indent();
+      	$this->out .= "<image url=\"".$this->escapeUrl($node->getValue())."\">\n";
 		$this->level++;
 		$node->childrenAccept($this);
 		$this->level--;
-		$this->out .= $this->indent()."</image>\n";
+		$this->indent();
+		$this->out .= "</image>\n";
     }
 
     public function visitLink($node)
     {
-    	$this->out .= $this->indent()."<link url=\"".$this->escapeUrl($node->getValue())."\">\n";
+    	$this->indent();
+    	$this->out .= "<link url=\"".$this->escapeUrl($node->getValue())."\">\n";
     	$this->level++;
     	$node->childrenAccept($this);
     	$this->level--;
-    	$this->out .= $this->indent()."</link>\n";
+    	$this->indent();
+    	$this->out .= "</link>\n";
     }
 
     public function visitStrong($node)
     {
-    	$this->out .= $this->indent()."<strong>\n";
+    	$this->indent();
+    	$this->out .= "<strong>\n";
     	$this->level++;
     	$node->childrenAccept($this);
     	$this->level--;
-    	$this->out .= $this->indent()."</strong>\n";
+    	$this->indent();
+    	$this->out .= "</strong>\n";
     }
 
     public function visitEm($node)
     {
-        $this->out .= $this->indent()."<em>\n";
+    	$this->indent();
+        $this->out .= "<em>\n";
 		$this->level++;
 		$node->childrenAccept($this);
 		$this->level--;
-		$this->out .= $this->indent()."</em>\n";
+		$this->indent();
+		$this->out .= "</em>\n";
     }
 
     public function visitCode($node)
     {
-    	$this->out .= $this->indent()."<code>\n";
+    	$this->indent();
+    	$this->out .= "<code>\n";
     	$this->level++;
     	$node->childrenAccept($this);
     	$this->level--;
-    	$this->out .= $this->indent()."</code>\n";
+    	$this->indent();
+    	$this->out .= "</code>\n";
     }
 
     public function visitText($node)
     {
-    	$this->out .= $this->indent()."<text>";
+    	$this->indent();
+    	$this->out .= "<text>";
     	$this->out .= $this->escape($node->getValue());
     	$this->out .= "</text>\n";
     }
@@ -200,7 +222,8 @@ class XmlRenderer implements Renderer
 
     public function visitLineBreak($node)
     {
-    	$this->out .= $this->indent()."<linebreak />\n";
+    	$this->indent();
+    	$this->out .= "<linebreak />\n";
     }
 
     public function escapeUrl($text)
@@ -214,12 +237,10 @@ class XmlRenderer implements Renderer
 
     public function indent()
     {
-        $buf = '';
         $repeat = $this->level * 2;
         for ($i = $repeat - 1; $i >= 0; --$i) {
-            $buf .= ' ';
+            $this->out .= ' ';
         }
-        return $buf;
     }
 
     public function getOutput()
