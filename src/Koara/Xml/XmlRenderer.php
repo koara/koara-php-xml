@@ -125,7 +125,6 @@ class XmlRenderer implements Renderer
     		$this->out .= $this->escape($node->getValue());
     		$this->level--;
     		$this->out .= "</codeblock>\n";
-    		$this->level--;
     	} else {
     		$this->out .= " />\n";
     	}
