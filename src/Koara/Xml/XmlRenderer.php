@@ -129,6 +129,7 @@ class XmlRenderer implements Renderer
     	} else {
     		$this->out .= " />\n";
     	}
+    	$this->level--;
     }
 
     public function visitParagraph($node)
