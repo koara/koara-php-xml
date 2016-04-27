@@ -36,10 +36,6 @@ class ComplianceTest extends \PHPUnit_Framework_TestCase {
 	 		$renderer = new XmlRenderer();
 	 		$document->accept($renderer);
 	 		
-	 		echo "\n\n\n";
-	 		echo $renderer->getOutput();
-	 		echo "\n\n\n";
-	 		
 	 		$this->assertEquals($xml, $renderer->getOutput());
 	}
 	
