@@ -117,7 +117,7 @@ class XmlRenderer implements Renderer
     	$this->indent();
     	$this->out .= "<codeblock";
     	if($node->getLanguage() != null) {
-    		$this->out .= " language=\"".$node->getLanguage()."\"";
+    		$this->out .= " language=\"".$this->escape($node->getLanguage())."\"";
     	}
     	if($node->getValue() != null && strlen($node->getValue()) > 0) {
     		$this->out .= ">";
