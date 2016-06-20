@@ -1,16 +1,16 @@
 [![Koara](http://www.koara.io/logo.png)](http://www.koara.io)
 
-[![Build Status](https://img.shields.io/travis/koara/koara-php-html.svg)](https://travis-ci.org/koara/koara-php-html)
-[![Coverage Status](https://img.shields.io/coveralls/koara/koara-php-html.svg)](https://coveralls.io/github/koara/koara-php-html?branch=master)
+[![Build Status](https://img.shields.io/travis/koara/koara-php-xml.svg)](https://travis-ci.org/koara/koara-php-xml)
+[![Coverage Status](https://img.shields.io/coveralls/koara/koara-php-xml.svg)](https://coveralls.io/github/koara/koara-php-xml?branch=master)
 [![Latest Version](https://img.shields.io/packagist/v/koara/koara-xml.svg)](https://packagist.org/packages/koara/koara-xml)
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://github.com/koara/koara-php-html/blob/master/LICENSE)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://github.com/koara/koara-php-xml/blob/master/LICENSE)
 
-# Koara-php-html
+# Koara-php-xml
 [Koara](http://www.koara.io) is a modular lightweight markup language. This project can render the koara AST to Html in php.  
 The AST is created by the [core koara parser](https://github.com/koara/koara-php).
 
 ## Getting started
-- Download [ZIP file](https://github.com/koara/koara-php-xml/archive/0.10.0.zip)
+- Download [ZIP file](https://github.com/koara/koara-php-xml/archive/0.12.0.zip)
 - Composer
 
   ``` bash
