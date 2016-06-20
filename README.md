@@ -6,7 +6,7 @@
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://github.com/koara/koara-php-xml/blob/master/LICENSE)
 
 # Koara-php-xml
-[Koara](http://www.koara.io) is a modular lightweight markup language. This project can render the koara AST to Html in php.  
+[Koara](http://www.koara.io) is a modular lightweight markup language. This project can render the koara AST to Xml in php.  
 The AST is created by the [core koara parser](https://github.com/koara/koara-php).
 
 ## Getting started
