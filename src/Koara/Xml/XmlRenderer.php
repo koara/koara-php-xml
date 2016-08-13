@@ -29,6 +29,11 @@ class XmlRenderer implements Renderer
      */
     private $declarationTag;
     
+    /**
+     * @var bool
+     */
+    private $hardWrap;
+    
     public function visitDocument($node)
     {
     	$this->out = "";
@@ -222,8 +227,9 @@ class XmlRenderer implements Renderer
 
     public function visitLineBreak($node)
     {
+    	$hard = ($this->hardWrap || $node->isExplicit()) ? "true" : "false";
     	$this->indent();
-    	$this->out .= "<linebreak />\n";
+    	$this->out .= "<linebreak explicit=\"".$hard."\"/>\n";
     }
 
     public function escapeUrl($text)
@@ -243,13 +249,19 @@ class XmlRenderer implements Renderer
         }
     }
 
+    public function setDeclarationTag($declarationTag) {
+    	$this->declarationTag = $declarationTag;
+    }
+    
+    public function setHardWrap($hardWrap) {
+    	$this->$hardWrap = $hardWrap;
+    }
+    
     public function getOutput()
     {
         return trim($this->out);
     }
     
-    public function setDeclarationTag($declarationTag) {
-    	$this->declarationTag = $declarationTag;
-    }
+
     
 }
